@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab6.AfterLogIn">
+   <children>
+      <ChoiceBox fx:id="choiceBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+      <Label fx:id="centerLabel" alignment="CENTER" layoutX="182.0" layoutY="15.0" prefHeight="70.0" prefWidth="406.0">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="37.0" layoutY="86.0" prefHeight="362.0" prefWidth="524.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="friendsTab" text="Friends">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="254.0" prefWidth="418.0">
+                     <children>
+                        <TableView fx:id="friendsTable" layoutX="14.0" layoutY="14.0" prefHeight="279.0" prefWidth="326.0">
+                          <columns>
+                            <TableColumn fx:id="nameColumn" prefWidth="156.79998779296875" text="Name" />
+                            <TableColumn fx:id="friendsFromColumn" prefWidth="169.60003662109375" text="Friends from" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="deleteFriendship" alignment="CENTER" layoutX="349.0" layoutY="243.0" mnemonicParsing="false" onAction="#deleteFriendshipClicked" prefHeight="50.0" prefWidth="168.0" text=" Delete friendship">
+                           <effect>
+                              <Lighting bumpInput="$null">
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="requestsTab" text="Friend requests">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="300.0">
+                     <children>
+                        <TableView fx:id="requestsTable" layoutX="14.0" layoutY="14.0" prefHeight="276.0" prefWidth="368.0">
+                          <columns>
+                            <TableColumn fx:id="reqNameColumn" prefWidth="183.20001220703125" text="Name" />
+                              <TableColumn fx:id="reqStatusColumn" prefWidth="183.20001220703125" text="Status" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="deleteRequest" alignment="CENTER" layoutX="393.0" layoutY="250.0" mnemonicParsing="false" onAction="#deleteRequestClicked" prefHeight="40.0" prefWidth="120.0" text="Delete request">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="acceptRequest" alignment="CENTER" layoutX="393.0" layoutY="199.0" mnemonicParsing="false" onAction="#acceptRequestClicked" prefHeight="40.0" prefWidth="120.0" text="Accept request">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="searchTab" text="Search for new friends">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="srchNameField" layoutX="26.0" layoutY="17.0" prefHeight="40.0" prefWidth="320.0" promptText="Name">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TableView fx:id="searchTable" layoutX="26.0" layoutY="71.0" prefHeight="218.0" prefWidth="320.0">
+                          <columns>
+                            <TableColumn fx:id="srchNameColumn" prefWidth="199.20001220703125" text="Name" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="addFriendBtn" alignment="CENTER" layoutX="360.0" layoutY="251.0" mnemonicParsing="false" onAction="#addFriendBtnClicked" prefHeight="40.0" prefWidth="150.0" text="Add friend">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
